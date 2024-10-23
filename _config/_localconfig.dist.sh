@@ -99,3 +99,8 @@ webportbase='6'
 # VNC port base:
 # The first digit of the port which the selenium VNC container should bind its port to
 vncportbase='5'
+
+# DB port base:
+# The first digit of the port which the DB container should bind its port to
+dbportbase='4'
+

@@ -30,7 +30,7 @@ fi
 
 
 # Verify that all necessary env variables are set
-if [[ -z "$COMPOSE_PROJECT_NAME" ]] || [[ -z "$MOODLE_DOCKER_WWWROOT" ]] || [[ -z "$MOODLE_DOCKER_DB" ]] || [[ -z "$MOODLE_DOCKER_PHP_VERSION" ]] || [[ -z "$MOODLE_DOCKER_WEB_PORT" ]] || [[ -z "$MOODLE_DOCKER_BROWSER" ]] || [[ -z "$MOODLE_DOCKER_SELENIUM_VNC_PORT" ]]; then
+if [[ -z "$COMPOSE_PROJECT_NAME" ]] || [[ -z "$MOODLE_DOCKER_WWWROOT" ]] || [[ -z "$MOODLE_DOCKER_DB" ]] || [[ -z "$MOODLE_DOCKER_PHP_VERSION" ]] || [[ -z "$MOODLE_DOCKER_WEB_PORT" ]] || [[ -z "$MOODLE_DOCKER_BROWSER" ]] || [[ -z "$MOODLE_DOCKER_SELENIUM_VNC_PORT" ]] || [[ -z "$MOODLE_DOCKER_DB_PORT" ]]; then
     echo 'Necessary env variables are not set yet.'
     echo 'Please run moodle-docker-env.sh first'
     exit 1

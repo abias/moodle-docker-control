@@ -179,6 +179,7 @@ port4=$(array_get_index_of $database "${databases[@]}")
 port5=$(array_get_index_of $php "${phps[@]}")
 webport=${webportbase}${port2}${port3}${port4}${port5}
 vncport=${vncportbase}${port2}${port3}${port4}${port5}
+dbport=${dbportbase}${port2}${port3}${port4}${port5}
 
 
 ###################################
@@ -192,6 +193,7 @@ export MOODLE_DOCKER_PHP_VERSION=$php
 export MOODLE_DOCKER_WEB_PORT=$bindto:$webport
 export MOODLE_DOCKER_BROWSER=$browser
 export MOODLE_DOCKER_SELENIUM_VNC_PORT=$bindto:$vncport
+export MOODLE_DOCKER_DB_PORT=$bindto:$dbport
 
 
 ###################################
@@ -216,3 +218,4 @@ echo -e "Selenium browser: \033[1m${browser}\033[0m"
 echo
 echo -e "Webserver URL:    \033[1m\033[93mhttp://${bindto}:${webport}/\033[39m\033[0m"
 echo -e "VNC Port:         \033[1m${bindto}:${vncport}\033[0m"
+echo -e "DB Port:          \033[1m${bindto}:${dbport}\033[0m"
