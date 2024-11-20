@@ -101,7 +101,7 @@ fi
 # If requested, initialize the smart data set with example courses and test users
 if [[ $initdata == 'true' ]]; then
     wget https://raw.githubusercontent.com/andrewnicols/moodle-datagenerator/master/smartdata.php -P $MOODLE_DOCKER_WWWROOT/
-    moodle-docker-compose exec webserver php smartdata.php --admin
+    $pathtobin exec webserver php smartdata.php --admin
     rm -f $MOODLE_DOCKER_WWWROOT/smartdata.php
 fi
 
