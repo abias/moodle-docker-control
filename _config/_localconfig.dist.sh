@@ -24,7 +24,7 @@ clusters=(core plugins)
 
 # Versions:
 # The moodle versions which should be supported for on-demand usage
-versions=(master 401 402 403 404 405)
+versions=(main 401 402 403 404 405)
 
 
 ###################################
