@@ -97,7 +97,7 @@ fi
 # If requested, initialize XDebug in the webserver container
 if [[ $initxdebug == 'true' ]]; then
     $pathtobin exec webserver pecl install xdebug
-    $pathtobin exec webserver docker-php-ext-enable xdebug
+    $pathtobin exec webserver docker-php-ext-enable xdebug.so
 
     read -r -d '' conf <<'EOF'
 
