@@ -16,7 +16,7 @@ source "$CURRENTDIR/../_config/_localconfig.sh"
 usage ()
 {
     cat <<EOU
-Usage: 
+Usage:
 moodle-docker-init.sh [options]
 
 Parameters (at least one is required):
@@ -93,6 +93,9 @@ fi
 ### action
 ###################################
 
+# Detect if we are in Moodle 5.1+ and we use the public/ folder
+detect_moodle_public_prefix
+
 # If requested, initialize the database for manual usage
 if [[ $initmanual == 'true' ]]; then
     $pathtobin exec webserver php admin/cli/install_database.php --agree-license --fullname="$COMPOSE_PROJECT_NAME" --shortname="$COMPOSE_PROJECT_NAME" --adminpass="test" --adminemail="admin@example.com"
@@ -107,12 +110,12 @@ fi
 
 # If requested, initialize the behat testing environment
 if [[ $initbehat == 'true' ]]; then
-    $pathtobin exec webserver php admin/tool/behat/cli/init.php
+    $pathtobin exec webserver php ${PUBLICPREFIX}admin/tool/behat/cli/init.php
 fi
 
 # If requested, initialize the PHPUnit testing environment
 if [[ $initunit == 'true' ]]; then
-    $pathtobin exec webserver php admin/tool/phpunit/cli/init.php
+    $pathtobin exec webserver php ${PUBLICPREFIX}admin/tool/phpunit/cli/init.php
 fi
 
 

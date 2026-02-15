@@ -81,3 +81,12 @@ array_get_index_of()
         fi
     done
 }
+
+detect_moodle_public_prefix ()
+{
+    # Detect if we are in Moodle 5.1+ and we use the public/ folder
+    PUBLICPREFIX=""
+    if [ -d "${MOODLE_DOCKER_WWWROOT}/public/admin/tool/behat" ]; then
+        PUBLICPREFIX="public/"
+    fi
+}
